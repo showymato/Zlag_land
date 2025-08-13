@@ -74,7 +74,7 @@ const Header = () => {
           New account
         </a>
         <Button className="hidden lg:flex" href="#login">
-          Sign in
+          Connet Wallet
         </Button>
 
         <Button
