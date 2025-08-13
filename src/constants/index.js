@@ -78,9 +78,9 @@ export const notificationImages = [notification4, notification3, notification2];
 export const companyLogos = [yourlogo, yourlogo, yourlogo, yourlogo, yourlogo];
 
 export const brainwaveServices = [
-  "Photo generating",
-  "Photo enhance",
-  "Seamless Integration",
+  "Custom Agent Generation",
+  "Agent Skill Upgrades",
+  "Seamless $ZLAG Integration ",
 ];
 
 export const brainwaveServicesIcons = [
@@ -128,12 +128,12 @@ export const roadmap = [
 ];
 
 export const collabText =
-  "With smart automation and top-notch security, it's the perfect solution for teams looking to work smarter.";
+  "Deploy, rent, and integrate specialized AI agents seamlessly into your workflow — all powered by the $ZLAG ecosystem"
 
 export const collabContent = [
   {
     id: "0",
-    title: "Seamless Integration",
+    title: "Seamless $ZLAG Integration",
     text: collabText,
   },
   {
@@ -142,7 +142,7 @@ export const collabContent = [
   },
   {
     id: "2",
-    title: "Top-notch Security",
+    title: "Autonomous Agent Automation",
   },
 ];
 
