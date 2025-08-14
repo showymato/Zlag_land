@@ -38,7 +38,7 @@ const Hero = () => {
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
             Deploy AI Agents without coding. Earn 24/7. Be part of the Autonomous Economy
           </p>
-          <Button href="/pricing" white>
+          <Button href="" white>
             Get started
           </Button>
         </div>
