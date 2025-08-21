@@ -32,7 +32,7 @@ const PricingList = () => {
             href={item.price ? "" : "karan@gmail.pro"}
             white={!!item.price}
           >
-            {item.price ? "Get started" : "Contact us"}
+            {item.price ? "Get started" : " Coming soon"}
           </Button>
 
           <ul>
