@@ -69,7 +69,7 @@ const Roadmap = () => (
       </div>
 
       <div className="flex justify-center mt-12 md:mt-15 xl:mt-20">
-        <Button href="">Get Started</Button>
+        <Button href="https://zlag-dashboard.vercel.app/">Get Started</Button>
       </div>
     </div>
   </Section>
