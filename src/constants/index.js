@@ -300,7 +300,7 @@ export const socials = [
     id: "1",
     title: "Twitter",
     iconUrl: twitter,
-    url: "#",
+    url: "https://x.com/zerolag_AI",
   },
   {
     id: "2",

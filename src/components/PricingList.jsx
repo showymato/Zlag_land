@@ -29,7 +29,7 @@ const PricingList = () => {
 
           <Button
             className="w-full mb-6"
-            href={item.price ? "https://zlag-dashboard.vercel.app/" : "zerolag@gmail.pro"}
+            href={item.price ? "https://app.zerolag.space/" : "zerolag@gmail.pro"}
             white={!!item.price}
           >
             {item.price ? "Get started" : " Coming soon"}
