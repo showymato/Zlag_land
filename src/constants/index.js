@@ -290,34 +290,34 @@ export const benefits = [
 ];
 
 export const socials = [
-  {
-    id: "0",
-    title: "Discord",
-    iconUrl: discordBlack,
-    url: "#",
-  },
+  // {
+  //   id: "0",
+  //   title: "Discord",
+  //   iconUrl: discordBlack,
+  //   url: "#",
+  // },
   {
     id: "1",
     title: "Twitter",
     iconUrl: twitter,
     url: "https://x.com/zerolag_AI",
   },
-  {
-    id: "2",
-    title: "Instagram",
-    iconUrl: instagram,
-    url: "#",
-  },
+  // {
+  //   id: "2",
+  //   title: "Instagram",
+  //   iconUrl: instagram,
+  //   url: "#",
+  // },
   {
     id: "3",
-    title: "Telegram",
+    title: "https://t.me/thezerolag",
     iconUrl: telegram,
     url: "#",
   },
-  {
-    id: "4",
-    title: "Facebook",
-    iconUrl: facebook,
-    url: "#",
-  },
+  // {
+  //   id: "4",
+  //   title: "Facebook",
+  //   iconUrl: facebook,
+  //   url: "#",
+  // },
 ];
