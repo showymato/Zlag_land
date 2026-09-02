@@ -113,23 +113,15 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 import { useRef, useState } from "react";
-import { Copy, Check } from "lucide-react";
 import { curve, heroBackground, robot } from "../assets";
 import Button from "./Button";
 import Section from "./Section";
-import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
+import {
+  BackgroundCircles,
+  BottomLine,
+  Gradient,
+} from "./design/Hero";
 import { heroIcons } from "../constants";
 import { ScrollParallax } from "react-just-parallax";
 import Generating from "./Generating";
@@ -137,6 +129,39 @@ import Notification from "./Notification";
 import CompanyLogos from "./CompanyLogos";
 
 const CONTRACT_ADDRESS = "0x1a2B3c4D5e6F7890aBcDeF1234567890AbCdEf12";
+
+/* Copy Icon */
+const CopyIcon = () => (
+  <svg
+    className="w-3.5 h-3.5 sm:w-4 sm:h-4"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <rect width="13" height="13" x="9" y="9" rx="2" />
+    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+  </svg>
+);
+
+/* Check Icon */
+const CheckIcon = () => (
+  <svg
+    className="w-3.5 h-3.5 sm:w-4 sm:h-4"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M20 6L9 17l-5-5" />
+  </svg>
+);
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -146,9 +171,12 @@ const Hero = () => {
     try {
       await navigator.clipboard.writeText(CONTRACT_ADDRESS);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Failed to copy contract address:", err);
+
+      setTimeout(() => {
+        setCopied(false);
+      }, 2000);
+    } catch (error) {
+      console.error("Failed to copy contract address:", error);
     }
   };
 
@@ -160,29 +188,43 @@ const Hero = () => {
       customPaddings
       id="hero"
     >
-      <div className="container relative" ref={parallaxRef}>
-        {/* Contract Address bar */}
+      <div
+        className="container relative"
+        ref={parallaxRef}
+      >
+        {/* =========================================
+            CONTRACT ADDRESS
+        ========================================= */}
         <div className="relative z-20 flex justify-center mb-8">
           <div className="group relative p-[1px] rounded-full bg-conic-gradient">
             <div className="flex items-center gap-2 sm:gap-3 rounded-full bg-n-8 px-3 py-2 sm:px-5 sm:py-2.5">
+              
+              {/* CA Label */}
               <span className="flex items-center gap-1.5 pr-2 sm:pr-3 border-r border-n-1/10">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-color-1 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-color-1" />
                 </span>
+
                 <span className="text-xs sm:text-sm font-semibold tracking-wide text-n-1 uppercase">
                   CA
                 </span>
               </span>
 
+              {/* Contract Address */}
               <span className="text-[0.7rem] sm:text-sm text-n-3 font-mono truncate max-w-[7.5rem] xs:max-w-[9.5rem] sm:max-w-[18rem] md:max-w-none">
                 {CONTRACT_ADDRESS}
               </span>
 
+              {/* Copy Button */}
               <button
                 type="button"
                 onClick={handleCopy}
-                aria-label="Copy contract address"
+                aria-label={
+                  copied
+                    ? "Contract address copied"
+                    : "Copy contract address"
+                }
                 className={`flex items-center gap-1.5 rounded-full px-2.5 py-1.5 sm:px-3.5 sm:py-1.5 text-xs sm:text-sm font-medium transition-all duration-200 shrink-0 ${
                   copied
                     ? "bg-color-1/20 text-color-1"
@@ -191,13 +233,17 @@ const Hero = () => {
               >
                 {copied ? (
                   <>
-                    <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                    <span className="hidden sm:inline">Copied</span>
+                    <CheckIcon />
+                    <span className="hidden sm:inline">
+                      Copied
+                    </span>
                   </>
                 ) : (
                   <>
-                    <Copy className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                    <span className="hidden sm:inline">Copy</span>
+                    <CopyIcon />
+                    <span className="hidden sm:inline">
+                      Copy
+                    </span>
                   </>
                 )}
               </button>
@@ -205,53 +251,90 @@ const Hero = () => {
           </div>
         </div>
 
+        {/* =========================================
+            HERO CONTENT
+        ========================================= */}
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
+          
           <h1 className="h1 mb-6">
-            Incentivized Decentralized &nbsp;AI&nbsp;Agent Marketplace {` `}
+            Incentivized Decentralized&nbsp;
+            <span className="whitespace-nowrap">
+              AI Agent Marketplace
+            </span>{" "}
             <span className="inline-block relative">
-              ZeroLag{" "}
+              ZeroLag
+
               <img
                 src={curve}
                 className="absolute top-full left-0 w-full xl:-mt-2"
                 width={624}
                 height={28}
-                alt="Curve"
+                alt="Decorative curve"
               />
             </span>
           </h1>
+
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-            Deploy AI Agents without coding. Earn 24/7. Be part of the Autonomous Economy
+            Deploy AI Agents without coding. Earn 24/7.
+            Be part of the Autonomous Economy.
           </p>
-          <Button href="https://app.zerolag.space/" white>
+
+          <Button
+            href="https://app.zerolag.space/"
+            white
+          >
             Get started
           </Button>
         </div>
+
+        {/* =========================================
+            HERO VISUAL
+        ========================================= */}
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
+          
           <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
+            
             <div className="relative bg-n-8 rounded-[1rem]">
+              
+              {/* Browser Top Bar */}
               <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
 
+              {/* Hero Image Area */}
               <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
+                
                 <img
                   src={robot}
                   className="w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%]"
                   width={1024}
                   height={490}
-                  alt="AI"
+                  alt="ZeroLag AI Agents"
                 />
 
-                <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
+                {/* Generating Card */}
+                <Generating
+                  className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2"
+                />
 
+                {/* Left Floating Icons */}
                 <ScrollParallax isAbsolutelyPositioned>
                   <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
                     {heroIcons.map((icon, index) => (
-                      <li className="p-5" key={index}>
-                        <img src={icon} width={24} height={25} alt={icon} />
+                      <li
+                        className="p-5"
+                        key={index}
+                      >
+                        <img
+                          src={icon}
+                          width={24}
+                          height={25}
+                          alt=""
+                        />
                       </li>
                     ))}
                   </ul>
                 </ScrollParallax>
 
+                {/* Right Notification */}
                 <ScrollParallax isAbsolutelyPositioned>
                   <Notification
                     className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[18rem] xl:flex"
@@ -261,24 +344,34 @@ const Hero = () => {
               </div>
             </div>
 
+            {/* Gradient */}
             <Gradient />
           </div>
+
+          {/* Hero Background */}
           <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
             <img
               src={heroBackground}
               className="w-full"
               width={1440}
               height={1800}
-              alt="hero"
+              alt=""
             />
           </div>
 
+          {/* Background Circles */}
           <BackgroundCircles />
         </div>
 
-        <CompanyLogos className="hidden relative z-10 mt-20 lg:block" />
+        {/* =========================================
+            COMPANY LOGOS
+        ========================================= */}
+        <CompanyLogos
+          className="hidden relative z-10 mt-20 lg:block"
+        />
       </div>
 
+      {/* Bottom Line */}
       <BottomLine />
     </Section>
   );
