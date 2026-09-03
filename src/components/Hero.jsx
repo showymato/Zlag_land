@@ -13,7 +13,7 @@ import Generating from "./Generating";
 import Notification from "./Notification";
 import CompanyLogos from "./CompanyLogos";
 
-const CONTRACT_ADDRESS = "cooming soon...";
+const CONTRACT_ADDRESS = "coming soon";
 
 /* Copy Icon */
 const CopyIcon = () => (
