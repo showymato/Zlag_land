@@ -64,11 +64,11 @@ export const navigation = [
     url: "#login",
     onlyMobile: true,
   },
-  {
-    id: "4",
-    title: "About us",
-    url: "http://zlag-land-main.vercel.app",
-  },
+  // {
+  //   id: "4",
+  //   title: "About us",
+  //   url: "",
+  // },
 ];
 
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
