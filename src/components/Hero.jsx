@@ -165,7 +165,7 @@ const Hero = () => {
           </p>
 
           <Button
-            href="https://https://zlag-dashboard.vercel.app//"
+            href="https://zlag-dashboard.vercel.app//"
             white
           >
             Get started
